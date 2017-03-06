@@ -3,31 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Grid : MonoBehaviour {
-	
-	public class Node : MonoBehaviour
-	{
-		[SerializeField] private Vector2 nodePos = new Vector2(0,0); public Vector2 NodePos{get{return nodePos;}}
-		private bool occupied = false; public bool Occupied{get{return occupied;}set{occupied = value;}}
-		private bool occupidTwice = false; public bool OccupiedTwice{get{return occupidTwice;}set{OccupiedTwice = value;}}
-		[SerializeField] private int nodeID = 0; public int GetID{get{return nodeID;}}
-
-		public void SetValues(int x, int y, int id)
-		{
-			nodePos.x = x;
-			nodePos.y = y;
-			nodeID = id;
-		}
-	}
 
 	[SerializeField] private GameObject cubePrefab;
 	[SerializeField] private int gridX = 0, gridY = 0;
+	[SerializeField] private List<Node> nodeList = new List<Node>();
+	[SerializeField] private GameManager gameManager;
 
 	void Start ()
 	{
-		CreateGrid();
+		StartCoroutine(CreateGrid());
 	}
 	
-	private void CreateGrid()
+	private IEnumerator CreateGrid()
 	{
 		GameObject parent = new GameObject("Parent");
 		int id = 0;
@@ -35,14 +22,76 @@ public class Grid : MonoBehaviour {
 		{
 			for(int y = 0; y < gridY; y++)
 			{
-				GameObject newCube = GameObject.Instantiate(cubePrefab, new Vector2(x,y),Quaternion.identity);
+				GameObject newCube = GameObject.Instantiate(cubePrefab, new Vector2((x - y) * 1.745f,x + y), cubePrefab.transform.rotation);
 				Node newNode = newCube.AddComponent<Node>();
 				newNode.SetValues(x,y, id);
-
+				nodeList.Add(newNode);
 				newCube.transform.SetParent(parent.transform);
 				id++;
 			}
 		}
-		parent.transform.position = new Vector3(-8,-3f);
+
+		parent.transform.position = new Vector3(-6.75f,-7.4f);
+		parent.transform.localScale = new Vector3(0.55f,0.55f,0.55f);
+
+		for (int i = 0; i < 7; i += 2)
+		{
+			nodeList[i].gameObject.tag = "StartNode";
+		}
+		for (int i = nodeList.Count - 1; i > nodeList.Count - 8; i -= 2)
+		{
+			nodeList[i].gameObject.tag = "EndNode";
+		}
+
+		foreach(GameObject go in GameObject.FindGameObjectsWithTag("StartNode"))
+		{
+			go.GetComponent<Renderer>().material.color = Color.red;
+		}
+		foreach(GameObject go in GameObject.FindGameObjectsWithTag("EndNode"))
+		{
+			go.GetComponent<Renderer>().material.color = Color.blue;
+		}
+
+		List<Node> nodesToChange = new List<Node>();
+
+		nodesToChange.AddRange(GetNodeRow(3,18,6));
+		nodesToChange.AddRange(GetNodeRow(3,18,0));
+		nodesToChange.AddRange(GetNodeRow(4,17,1));
+		nodesToChange.AddRange(GetNodeRow(4,17,5));
+
+
+		foreach(Node objct in nodesToChange)
+		{
+			//objct.GetComponent<Renderer>().material.color = Color.black;
+			nodeList.Remove(objct);
+			Destroy(objct.gameObject);
+		}
+
+		gameManager.StartGame();
+
+		yield return new WaitForEndOfFrame();
+	}
+
+	private List<Node> GetNodeRow(int xMin, int xMax, int y)
+	{
+		List<Node> returnNodes = new List<Node>();
+
+		for (int i = xMin; i < xMax; i++)
+		{
+			returnNodes.Add(GetNode(i,y));
+		}
+
+		return returnNodes;
+	}
+
+	public Node GetNode(int x, int y)
+	{
+		int nodeToGet = (x * 7) + y;
+		return nodeList[nodeToGet];
+	}
+
+	public List<Node> GetNodeList()
+	{
+		return nodeList;
 	}
 }
