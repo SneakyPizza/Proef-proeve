@@ -16,10 +16,16 @@ public class Node : MonoBehaviour
 	private bool traverseAble = false; 
 	public bool TraverseAble{get{return traverseAble;}set{traverseAble = value;}}
 
-	public void SetValues(int x, int y, int id)
+	public void SetValues(int x, int y)
 	{
 		nodePos.x = x;
 		nodePos.y = y;
-		nodeID = id;
+	}
+	public int NodeID
+	{
+		set
+		{
+			nodeID = value;
+		}
 	}
 }

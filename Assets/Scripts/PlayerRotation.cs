@@ -18,12 +18,13 @@ public class PlayerRotation : MonoBehaviour {
 
 	public void EndTurn()
 	{
+		players[currentPlayer].CanWalk = false;	
 		currentPlayer ++;
 		if (currentPlayer >= players.Count)
 			currentPlayer = 0;
+		
 		cameraFollow.SetTarget = players[currentPlayer].PlayerObject.transform;
-		//cameraTargetter.StopAllCoroutines();
-		//StartCoroutine(cameraTargetter.Target(players[currentPlayer] ,1.5f, 1.5f));
+		players[currentPlayer].CanWalk = true;
 		NextPlayer();
 	}
 

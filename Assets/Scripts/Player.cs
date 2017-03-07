@@ -4,13 +4,24 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
-	private int playerID;
+	[SerializeField] private int playerID;
 	private string playerName;
 	private GameObject playerObject;
 	private Color playerColor;
 
 	private bool canWalk;
 
+	public int PlayerID
+	{
+		get
+		{
+			return playerID;
+		}
+		set
+		{
+			playerID = value;
+		}
+	}
 	public bool CanWalk
 	{
 		get

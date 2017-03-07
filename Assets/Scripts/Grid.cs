@@ -17,17 +17,17 @@ public class Grid : MonoBehaviour {
 	private IEnumerator CreateGrid()
 	{
 		GameObject parent = new GameObject("Parent");
-		int id = 0;
+
 		for(int x = 0; x < gridX; x++)
 		{
 			for(int y = 0; y < gridY; y++)
 			{
 				GameObject newCube = GameObject.Instantiate(cubePrefab, new Vector2((x - y) * 1.745f,x + y), cubePrefab.transform.rotation);
 				Node newNode = newCube.AddComponent<Node>();
-				newNode.SetValues(x,y, id);
+				newNode.SetValues(x,y);
 				nodeList.Add(newNode);
+				newNode.gameObject.tag = "Node";
 				newCube.transform.SetParent(parent.transform);
-				id++;
 			}
 		}
 
@@ -59,12 +59,16 @@ public class Grid : MonoBehaviour {
 		nodesToChange.AddRange(GetNodeRow(4,17,1));
 		nodesToChange.AddRange(GetNodeRow(4,17,5));
 
-
 		foreach(Node objct in nodesToChange)
 		{
 			//objct.GetComponent<Renderer>().material.color = Color.black;
 			nodeList.Remove(objct);
 			Destroy(objct.gameObject);
+		}
+
+		for(int i = 0; i < nodeList.Count; i++)
+		{
+			nodeList[i].NodeID = i;
 		}
 
 		gameManager.StartGame();
