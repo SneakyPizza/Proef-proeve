@@ -32,17 +32,4 @@ public class GameManager : MonoBehaviour {
 		testPrefba = players[0].gameObject;
 		playerRotation.Players = players;
 	}
-
-	void Update()
-	{
-		GameObject[] objects = GameObject.FindGameObjectsWithTag("Node");
-		foreach(GameObject objcet in objects)
-		{
-			float dist = Vector2.Distance(testPrefba.transform.position, objcet.transform.position);
-			if (dist < 1.9f && dist > 1.05f)
-				objcet.GetComponent<Renderer>().material.color = Color.cyan;
-			else if (objcet.GetComponent<Renderer>().material.color != Color.white)
-				objcet.GetComponent<Renderer>().material.color = Color.white;
-		}
-	}
 }

@@ -10,6 +10,11 @@ public class PlayerRotation : MonoBehaviour {
 	[SerializeField] private List<Player> players = new List<Player>();
 	[SerializeField] private CardManager cardManager;
 
+	void Start()
+	{
+		EndTurn();
+	}
+
 	void Update()
 	{
 		if (Input.GetKeyDown(KeyCode.Space))
@@ -18,13 +23,13 @@ public class PlayerRotation : MonoBehaviour {
 
 	public void EndTurn()
 	{
-		players[currentPlayer].CanWalk = false;	
+		players[currentPlayer].ToggleTurn();
 		currentPlayer ++;
 		if (currentPlayer >= players.Count)
 			currentPlayer = 0;
 		
 		cameraFollow.SetTarget = players[currentPlayer].PlayerObject.transform;
-		players[currentPlayer].CanWalk = true;
+		players[currentPlayer].ToggleTurn();
 		NextPlayer();
 	}
 

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,7 +9,7 @@ public class Player : MonoBehaviour {
 	private GameObject playerObject;
 	private Color playerColor;
 
-	private bool canWalk;
+	[SerializeField] private bool canWalk;
 
 	public int PlayerID
 	{
@@ -22,17 +22,7 @@ public class Player : MonoBehaviour {
 			playerID = value;
 		}
 	}
-	public bool CanWalk
-	{
-		get
-		{
-			return canWalk;
-		}
-		set
-		{
-			canWalk = value;
-		}
-	}
+
 	public GameObject PlayerObject
 	{
 		set
@@ -43,5 +33,10 @@ public class Player : MonoBehaviour {
 		{
 			return playerObject;
 		}
+	}
+    
+	public void ToggleTurn()
+	{
+		canWalk = canWalk == true ? false : true;
 	}
 }
