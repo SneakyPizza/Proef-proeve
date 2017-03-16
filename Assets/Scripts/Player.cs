@@ -11,6 +11,8 @@ public class Player : MonoBehaviour {
 
 	[SerializeField] private bool canWalk;
 
+    public List<GameObject> Deck = new List<GameObject>();
+
 	public int PlayerID
 	{
 		get
@@ -39,4 +41,6 @@ public class Player : MonoBehaviour {
 	{
 		canWalk = canWalk == true ? false : true;
 	}
+
+
 }

@@ -21,6 +21,11 @@ public class PlayerRotation : MonoBehaviour {
 			EndTurn();
 	}
 
+    public void StartTurn()
+    {
+        cardManager.DrawCard();
+    }
+
 	public void EndTurn()
 	{
 		players[currentPlayer].ToggleTurn();
@@ -35,8 +40,7 @@ public class PlayerRotation : MonoBehaviour {
 
 	private void NextPlayer()
 	{
-		cardManager.HideAllCards();
-		cardManager.ShowCards(currentPlayer);
+		
 
 	}
 	public List<Player> Players
