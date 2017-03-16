@@ -4,51 +4,48 @@ using UnityEngine;
 
 public class PlayerRotation : MonoBehaviour {
 
-	[SerializeField] private SmoothCameraFollow cameraFollow;
-	[SerializeField] private CameraTargetter cameraTargetter;
-	[SerializeField] private int currentPlayer = 0;
-	[SerializeField] private List<Player> players = new List<Player>();
-	[SerializeField] private CardManager cardManager;
+	private int _currentPlayer = 0;
+
+	private SmoothCameraFollow _cameraFollow;
+	private List<Player> _players = new List<Player>();
+
+	void Awake()
+	{
+		_cameraFollow = Camera.main.GetComponent<SmoothCameraFollow>();
+	}
 
 	void Start()
 	{
-		EndTurn();
+		_cameraFollow.SetTarget = _players[_currentPlayer].PlayerObject.transform;
 	}
 
 	void Update()
 	{
 		if (Input.GetKeyDown(KeyCode.Space))
-			EndTurn();
+			StartCoroutine(EndTurn(0.25f));
+		if (Input.GetKeyDown(KeyCode.A))
+			_players[_currentPlayer].BoostActive = true;
 	}
 
-    public void StartTurn()
-    {
-        cardManager.DrawCard();
-    }
-
-	public void EndTurn()
+	public IEnumerator EndTurn(float waitTime)
 	{
-		players[currentPlayer].ToggleTurn();
-		currentPlayer ++;
-		if (currentPlayer >= players.Count)
-			currentPlayer = 0;
+		_players[_currentPlayer].EndTurn();
+		yield return new WaitForSeconds(waitTime);
+		_currentPlayer ++;
+
+		if (_currentPlayer >= _players.Count)
+			_currentPlayer = 0;
 		
-		cameraFollow.SetTarget = players[currentPlayer].PlayerObject.transform;
-		players[currentPlayer].ToggleTurn();
-		NextPlayer();
+		_cameraFollow.SetTarget = _players[_currentPlayer].PlayerObject.transform;
+		_players[_currentPlayer].EnableTurn();
+		yield return new WaitForEndOfFrame();
 	}
 
-	private void NextPlayer()
-	{
-		
-
-	}
 	public List<Player> Players
 	{
 		set 
 		{
-			players = value;
+			_players = value;
 		}
 	}
-
 }

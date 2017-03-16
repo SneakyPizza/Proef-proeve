@@ -4,28 +4,39 @@ using UnityEngine;
 
 public class Node : MonoBehaviour
 {
-	[SerializeField] private Vector2 nodePos = new Vector2(0,0); 
-	[SerializeField] private int nodeID = 0; 
+	private int _nodeID = 0; 
 
-	public Vector2 NodePos{get{return nodePos;}}
-	public int GetID{get{return nodeID;}}
+	private Vector3 _nodePos = new Vector2(0,0); 
+	private List<Node> _neighbourNodes = new List<Node>();
+
+	public Vector3 NodePos {get{return _nodePos;}}
+	public int GetID {get{return _nodeID;}}
 
 	private bool occupied = false; 
-	public bool Occupied{get{return occupied;}set{occupied = value;}}
+	public bool Occupied {get{return occupied;}set{occupied = value;}}
 
-	private bool traverseAble = false; 
-	public bool TraverseAble{get{return traverseAble;}set{traverseAble = value;}}
-
-	public void SetValues(int x, int y)
+	public void SetValues(float x, float y)
 	{
-		nodePos.x = x;
-		nodePos.y = y;
+		_nodePos.x = x;
+		_nodePos.y = y;
 	}
+
 	public int NodeID
 	{
 		set
 		{
-			nodeID = value;
+			_nodeID = value;
+		}
+	}
+	public List<Node> NeighbourNodes
+	{
+		get
+		{
+			return _neighbourNodes;
+		}
+		set
+		{
+			_neighbourNodes = value;
 		}
 	}
 }
