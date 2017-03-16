@@ -3,44 +3,50 @@ using System.Collections;
 
 public class SmoothCameraFollow : MonoBehaviour {
 
-	[Range(0,10f)][SerializeField] private float followSpeed;
-	[SerializeField] private Transform target;
+	[Range(0,10f)][SerializeField] private float _followSpeed;
+	[SerializeField] private Vector2 _minPos = new Vector2(), _maxPos = new Vector2();
+	[SerializeField] private float _maxDist = 0.05f;
 
+	private Transform _target;
 	private Vector3 newPos;
 
 	void Update()
 	{
-		if (target == null)
+		if (_target == null)
 			return;
 
-		FollowTarget(target);
+		FollowTarget(_target);
 	}
 
 	private void FollowTarget(Transform target)
 	{
-		newPos = (new Vector3(0,0,-5) + target.position) / 2;
+		newPos = (new Vector3(0,0,-5) + target.position * 1.25f) / 2;
 		newPos.z = -5f;
 		float dist = Vector2.Distance(transform.position, newPos);
-		if (dist > 0.05f)
+		if (dist > _maxDist)
 		{
 			Vector3 tempPos = transform.position;
-			tempPos = Vector3.Lerp(tempPos, newPos, followSpeed * Time.smoothDeltaTime);
+			tempPos = Vector3.Lerp(tempPos, newPos, _followSpeed * Time.smoothDeltaTime);
 			tempPos.x = (float)System.Math.Round(tempPos.x, 2);
 			tempPos.y = (float)System.Math.Round(tempPos.y, 2);
 			transform.position = tempPos;
 		}
+		Vector3 clampPos = transform.position;
+		clampPos.x = Mathf.Clamp(clampPos.x, _minPos.x, _maxPos.x);
+		clampPos.y = Mathf.Clamp(clampPos.y, _minPos.y, _maxPos.y);
+		transform.position = clampPos;
 	}
 
 	public Transform SetTarget
 	{
 		get
 		{
-			return target;
+			return _target;
 		}
 		set
 		{
-			if (target != value)
-				target = value;
+			if (_target != value)
+				_target = value;
 		}
 	}
 }
