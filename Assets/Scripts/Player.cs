@@ -22,6 +22,8 @@ public class Player : MonoBehaviour {
 	private GameObject _playerObject;
 	private List<Node> _nearbyNodes = new List<Node>();
 
+    private List<GameObject> _playerDeck = new List<GameObject>();
+
 	void Awake()
 	{
 		_spriteOutline = GetComponentInChildren<SpriteOutline>();
@@ -49,6 +51,7 @@ public class Player : MonoBehaviour {
     
 	public void EnableTurn()
 	{
+        //get card (id)
 		_spriteOutline.enabled = true;
 		if (_trapped)
 		{
@@ -77,30 +80,6 @@ public class Player : MonoBehaviour {
 		GetNearbyNodes();
 		ColourNearbyNodes(false);
 	}
-
-	/*public void ToggleTurn()
-	{
-		_canWalk = _canWalk == true ? false : true;
-		_hasWalked = _canWalk == true ? false : true;
-
-		if (_trapped)
-		{
-			_canWalk = false;
-			return;
-		}
-
-		if (_boostActive)
-		{
-			_boostActive = false;
-		}
-
-		GetNearbyNodes();
-
-		if (_canWalk)
-			ColourNearbyNodes(true);
-		else
-			ColourNearbyNodes(false);
-	}*/
 
 	private void GetNearbyNodes()
 	{
@@ -240,4 +219,16 @@ public class Player : MonoBehaviour {
 				ActivateBoost();
 		}
 	}
+
+    public List<GameObject> PlayerDeck
+    {
+        get
+        {
+            return _playerDeck;
+        }
+        set
+        {
+            _playerDeck = value;
+        }
+    }
 }

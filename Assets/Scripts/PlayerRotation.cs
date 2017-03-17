@@ -8,6 +8,7 @@ public class PlayerRotation : MonoBehaviour {
 
 	private SmoothCameraFollow _cameraFollow;
 	private List<Player> _players = new List<Player>();
+    private CardManager _cardManager;
 
 	void Awake()
 	{
@@ -37,6 +38,7 @@ public class PlayerRotation : MonoBehaviour {
 			_currentPlayer = 0;
 		
 		_cameraFollow.SetTarget = _players[_currentPlayer].PlayerObject.transform;
+        _cardManager.DrawCard();
 		_players[_currentPlayer].EnableTurn();
 		yield return new WaitForEndOfFrame();
 	}
@@ -48,4 +50,16 @@ public class PlayerRotation : MonoBehaviour {
 			_players = value;
 		}
 	}
+
+    public int CurrentPlayer
+    {
+        get
+        {
+            return _currentPlayer;
+        }
+        set
+        {
+            _currentPlayer = value;
+        }
+    }
 }

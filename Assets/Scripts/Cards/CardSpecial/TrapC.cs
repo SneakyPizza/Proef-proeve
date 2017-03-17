@@ -5,6 +5,7 @@ using UnityEngine;
 public class TrapC : Card
 {
     [SerializeField] private GameObject _trap;
+    private Player _player;
 
     private void Update()
     {
@@ -17,9 +18,9 @@ public class TrapC : Card
 
     private void ActivateTrap()
     {
-        if (CardSelected)
-        {
+        
 
-        }
+      
+       
     }
 }

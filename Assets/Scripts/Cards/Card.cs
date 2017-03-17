@@ -8,18 +8,10 @@ public class Card : MonoBehaviour
     private CardManager _cardManager;
     private bool _cardClicked = false;
     private bool _cardSelected = false;
-
-    public bool CardSelected
-    {
-        get
-        {
-            return _cardSelected;
-        }      
-    }
-
+    [SerializeField]private List<Sprite> _cardSprites = new List<Sprite>();
+ 
     private void OnCardClick()
     {
-      
         if (Input.GetMouseButtonDown(0) && GameObject.FindGameObjectWithTag("Card"))
         {
             SelectCard();
@@ -36,18 +28,28 @@ public class Card : MonoBehaviour
 
     public void DeactivateCard()
     {
+        Debug.Log("Deactivate");
         _cardSelected = false;
     }
     public void SelectCard()
     {
+        Debug.Log("Selected");
         _selectedCard = gameObject;
         _cardSelected = true;
     }
-    public virtual void ActivateCard()
+    public void ActivateCard()
     {
        if(_cardSelected == false)
         {
             return;
         } 
+    }
+
+    public bool CardSelected
+    {
+        get
+        {
+            return _cardSelected;
+        }
     }
 }
