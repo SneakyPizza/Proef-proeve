@@ -12,8 +12,11 @@ public class Node : MonoBehaviour
 	public Vector3 NodePos {get{return _nodePos;}}
 	public int GetID {get{return _nodeID;}}
 
-	private bool occupied = false; 
+	[SerializeField]private bool occupied = false; 
 	public bool Occupied {get{return occupied;}set{occupied = value;}}
+
+	[SerializeField]private bool hasPlayer = false;
+	public bool HasPlayer {get{return hasPlayer;}set{hasPlayer = value;}}
 
 	public void SetValues(float x, float y)
 	{
