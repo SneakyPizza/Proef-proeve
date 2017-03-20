@@ -4,23 +4,17 @@ using UnityEngine;
 
 public class TrapC : Card
 {
-    [SerializeField] private GameObject _trap;
-    private Player _player;
-
-    private void Update()
+    public override void ActivateOther(Player player)
     {
-        if (CardSelected && GameObject.FindGameObjectWithTag("Player"))
+        base.ActivateOther(player);
+        PlayerRotation rot = GameObject.FindWithTag(Tags.GAMECONTROLLER).GetComponent<PlayerRotation>();
+
+        if (player != rot.Players[rot.CurrentPlayer])
         {
-            ActivateTrap();
+            //TODO: skip walk
+            Debug.Log("Trap used on" + player);
+
+            player.EndTurn();
         }
-    }
- 
-
-    private void ActivateTrap()
-    {
-        
-
-      
-       
     }
 }

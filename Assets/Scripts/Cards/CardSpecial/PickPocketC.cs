@@ -2,15 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PickPocketC : MonoBehaviour {
+public class PickPocketC : Card
+{
+    public override void ActivateOther(Player player)
+    {
+        base.ActivateOther(player);
+        PlayerRotation rot = GameObject.FindWithTag(Tags.GAMECONTROLLER).GetComponent<PlayerRotation>();
+        if (player != rot.Players[rot.CurrentPlayer])
+        {
+            //if player clicked, select 1 card
+            Debug.Log("Pickpocket used on" + player);
+        }
+    }
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

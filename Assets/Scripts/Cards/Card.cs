@@ -6,24 +6,17 @@ public class Card : MonoBehaviour
 {
     private GameObject _selectedCard;
     private CardManager _cardManager;
-    private bool _cardClicked = false;
+    protected Player _player;
+    protected PlayerRotation _playerRotation;
     private bool _cardSelected = false;
-    [SerializeField]private List<Sprite> _cardSprites = new List<Sprite>();
- 
-    private void OnCardClick()
+
+    public virtual void ActivateSelf(Player _player)
     {
-        if (Input.GetMouseButtonDown(0) && GameObject.FindGameObjectWithTag("Card"))
-        {
-            SelectCard();
-            _cardClicked = true;
-        }
-
-        if (_cardClicked == true)
-        {
-            DeactivateCard();
-            _cardClicked = false;
-        }
-
+        Debug.Log("Activated " + this + " Card");
+    }
+    public virtual void ActivateOther(Player _player)
+    {
+        Debug.Log("Activated" + this + " Card on : \"TARGET\"");
     }
 
     public void DeactivateCard()
@@ -37,14 +30,6 @@ public class Card : MonoBehaviour
         _selectedCard = gameObject;
         _cardSelected = true;
     }
-    public void ActivateCard()
-    {
-       if(_cardSelected == false)
-        {
-            return;
-        } 
-    }
-
     public bool CardSelected
     {
         get

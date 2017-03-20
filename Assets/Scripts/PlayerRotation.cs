@@ -10,6 +10,7 @@ public class PlayerRotation : MonoBehaviour {
 	private List<Player> _players = new List<Player>();
     private CardManager _cardManager;
 
+
 	void Awake()
 	{
 		_cameraFollow = Camera.main.GetComponent<SmoothCameraFollow>();
@@ -45,6 +46,10 @@ public class PlayerRotation : MonoBehaviour {
 
 	public List<Player> Players
 	{
+        get
+        {
+            return _players;
+        }
 		set 
 		{
 			_players = value;
