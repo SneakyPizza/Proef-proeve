@@ -1,0 +1,17 @@
+Main menu on Enter
+- Titel fade in
+- Grote cirkel (zonder players) fade in
+- Rechts onder lege cirkel fade in -> pan (motion blur) to the right -> tutorial
+
+Tutorial screen
+- Links boven back button to main menu -> pan (motion blur) to the left > main menu
+- (Voor nu) On click next page (fade)
+
+On press Grote Cirkel
+- Titel fade out
+- Grote cirkel fade out
+- Rechts onder lege cirkel fade out
+
+- Players cirkel fade in (on hover (fade in / fade out) de players text) + mini cirkels als select
+- Select amount of players fade in
+- Rechts onder pijltje met cirkel fade in

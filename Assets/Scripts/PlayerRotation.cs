@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerRotation : MonoBehaviour {
 
-	private int _currentPlayer = 0;
+	private int _currentPlayer = 3;
 
 	private SmoothCameraFollow _cameraFollow;
 	private List<Player> _players = new List<Player>();
@@ -16,7 +16,7 @@ public class PlayerRotation : MonoBehaviour {
 
 	void Start()
 	{
-		_cameraFollow.SetTarget = _players[_currentPlayer].PlayerObject.transform;
+		_cameraFollow.SetTarget = _players[0].PlayerObject.transform;
 	}
 
 	void Update()
@@ -31,6 +31,7 @@ public class PlayerRotation : MonoBehaviour {
 	{
 		_players[_currentPlayer].EndTurn();
 		yield return new WaitForSeconds(waitTime);
+
 		_currentPlayer ++;
 
 		if (_currentPlayer >= _players.Count)
@@ -38,11 +39,16 @@ public class PlayerRotation : MonoBehaviour {
 		
 		_cameraFollow.SetTarget = _players[_currentPlayer].PlayerObject.transform;
 		_players[_currentPlayer].EnableTurn();
+
 		yield return new WaitForEndOfFrame();
 	}
 
 	public List<Player> Players
 	{
+		get
+		{
+			return _players;
+		}
 		set 
 		{
 			_players = value;

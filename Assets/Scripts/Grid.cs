@@ -10,12 +10,12 @@ public class Grid : MonoBehaviour {
 	[SerializeField] private Vector3 _gridPos;
 	[SerializeField] private Vector3 _gridScale;
 
-	private GameManager _gameManager;
+	private PlayerSpawner _playerSpawner;
 	private List<Node> _nodeList = new List<Node>();
 
 	void Awake()
 	{
-		_gameManager = GetComponent<GameManager>();
+		_playerSpawner = GetComponent<PlayerSpawner>();
 	}
 
 	void Start ()
@@ -79,7 +79,7 @@ public class Grid : MonoBehaviour {
 			_nodeList[i].SetValues(nodePos.x,nodePos.y);
 		}
 			
-		_gameManager.StartGame();
+		_playerSpawner.StartGame();
 
 		yield return new WaitForEndOfFrame();
 	}

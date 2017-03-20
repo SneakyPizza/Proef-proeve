@@ -9,16 +9,25 @@ public class SpriteAnimation : MonoBehaviour {
 
 	private int currentSprite = 0;
 
+	void Awake()
+	{
+		if (_spriteRenderer == null)
+			_spriteRenderer = GetComponent<SpriteRenderer>();
+	}
+
 	void OnEnable()
 	{
-		currentSprite = 0;
-		if (_sprites.Length > 0)
+		if (_spriteRenderer != null)
 		{
-			_spriteRenderer.sprite = _sprites[0];
-			Invoke("NextSprite", _animationSpeed);
+			currentSprite = 0;
+			if (_sprites.Length > 0)
+			{
+				_spriteRenderer.sprite = _sprites[0];
+				Invoke("NextSprite", _animationSpeed);
+			}
+			else
+				Debug.LogWarning("No sprites defined to this SpriteAnimation attached to " + this.gameObject.name);
 		}
-		else
-			Debug.LogWarning("No sprites defined to this SpriteAnimation attached to " + this.gameObject.name);
 	}
 
 	void NextSprite()
@@ -41,7 +50,7 @@ public class SpriteAnimation : MonoBehaviour {
 		CancelInvoke("NextSprite");
 	}
 
-	public float Speed
+	public float AnimationSpeed
 	{
 		get
 		{
@@ -50,6 +59,22 @@ public class SpriteAnimation : MonoBehaviour {
 		set
 		{
 			_animationSpeed = value;
+		}
+	}
+
+	public Sprite[] SpriteArray
+	{
+		set
+		{
+			_sprites = value;
+		}
+	}
+
+	public SpriteRenderer GetSpriteRenderer
+	{
+		get
+		{
+			return _spriteRenderer;
 		}
 	}
 

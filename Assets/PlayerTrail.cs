@@ -6,6 +6,7 @@ public class PlayerTrail : MonoBehaviour {
 
 	[SerializeField] private Material _trailMaterial;
 	private Transform _trailParent;
+	private Color _trailColor = Color.white;
 
 	void Start()
 	{
@@ -17,30 +18,49 @@ public class PlayerTrail : MonoBehaviour {
 	{
 		GameObject trailObject = new GameObject("Trail " + _trailParent.childCount.ToString());
 		LineRenderer lineRenderer = trailObject.AddComponent<LineRenderer>();
-		lineRenderer.startWidth = 0;
-		lineRenderer.endWidth = 0;
 		lineRenderer.material = _trailMaterial;
+		lineRenderer.startColor = _trailColor;
+		lineRenderer.endColor = _trailColor;
 		Vector3 newPos = (playerPos.position + nodePos) / 2;
 		trailObject.transform.position = newPos;
 
 		trailObject.transform.SetParent(_trailParent);
 		lineRenderer.SetPosition(0, playerPos.position);
 
-		float dist = Vector2.Distance(playerPos.position, nodePos);
-		float endSize = dist > 1.40f? 0.6f : 1f;
+		float lineWidth = 0.1f;
+		lineRenderer.startWidth = lineWidth;
+		lineRenderer.endWidth = lineWidth;
 
 		while (playerPos.position != nodePos)
 		{
-			if (lineRenderer.startWidth < endSize)
-			{
-				lineRenderer.startWidth += (speed * endSize);
-				lineRenderer.endWidth += (speed * endSize);
-			}
-
 			lineRenderer.SetPosition(1, playerPos.position);
 			yield return new WaitForEndOfFrame();
 		}
 
 		yield return new WaitForEndOfFrame();
+	}
+
+	public Color TrailColor
+	{
+		set
+		{
+			_trailColor = value;
+		}
+	}
+
+	public List<GameObject> TrailChildren
+	{
+		get
+		{
+			List<GameObject> children = new List<GameObject>();
+			Transform[] ts = _trailParent.GetComponentsInChildren<Transform>();
+
+			foreach(Transform transform in ts)
+			{
+				if (transform != _trailParent)
+					children.Add(transform.gameObject);
+			}
+			return children;
+		}
 	}
 }
