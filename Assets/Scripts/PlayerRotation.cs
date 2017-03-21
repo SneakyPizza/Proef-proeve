@@ -4,22 +4,22 @@ using UnityEngine;
 
 public class PlayerRotation : MonoBehaviour {
 
-	private int _currentPlayer = 0;
+	private int _currentPlayer = 3;
 
 	private SmoothCameraFollow _cameraFollow;
-	private List<Player> _players = new List<Player>();
+	public List<Player> _players = new List<Player>();
     private CardManager _cardManager;
-
 
 	void Awake()
 	{
-		_cameraFollow = Camera.main.GetComponent<SmoothCameraFollow>();
+        _cardManager = GameObject.FindGameObjectWithTag(Tags.GAMECONTROLLER).GetComponent<CardManager>();
+        _cameraFollow = Camera.main.GetComponent<SmoothCameraFollow>();
 	}
 
 	void Start()
 	{
 		_cameraFollow.SetTarget = _players[_currentPlayer].PlayerObject.transform;
-	}
+    }
 
 	void Update()
 	{
@@ -31,18 +31,28 @@ public class PlayerRotation : MonoBehaviour {
 
 	public IEnumerator EndTurn(float waitTime)
 	{
+        
+        _cardManager.CardToggler(CurrentPlayer, false);
 		_players[_currentPlayer].EndTurn();
 		yield return new WaitForSeconds(waitTime);
 		_currentPlayer ++;
 
 		if (_currentPlayer >= _players.Count)
 			_currentPlayer = 0;
-		
+        _cardManager.CardToggler(CurrentPlayer, true);
+        
+       
 		_cameraFollow.SetTarget = _players[_currentPlayer].PlayerObject.transform;
-        _cardManager.DrawCard();
 		_players[_currentPlayer].EnableTurn();
-		yield return new WaitForEndOfFrame();
+        _cardManager.DrawCard(_currentPlayer);
+
+        yield return new WaitForEndOfFrame();
 	}
+
+    private void ActiveCards()
+    {
+        
+    }
 
 	public List<Player> Players
 	{

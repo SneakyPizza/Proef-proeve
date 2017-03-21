@@ -27,7 +27,7 @@ public class Card : MonoBehaviour
     public void SelectCard()
     {
         Debug.Log("Selected");
-        _selectedCard = gameObject;
+        //_selectedCard = gameObject;
         _cardSelected = true;
     }
     public bool CardSelected
