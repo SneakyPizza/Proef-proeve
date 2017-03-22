@@ -6,6 +6,7 @@ public class SpriteAnimation : MonoBehaviour {
 	[SerializeField] private SpriteRenderer _spriteRenderer;
 	[SerializeField] private Sprite[] _sprites;
 	[SerializeField] private float _animationSpeed;
+	[SerializeField] private bool _loop = true;
 
 	private int currentSprite = 0;
 
@@ -42,6 +43,9 @@ public class SpriteAnimation : MonoBehaviour {
 			_spriteRenderer.sprite = _sprites[0];
 			currentSprite = 0;
 		}
+		if (currentSprite == _sprites.Length - 1 && !_loop)
+			return;
+		
 		Invoke("NextSprite", _animationSpeed);
 	}
 

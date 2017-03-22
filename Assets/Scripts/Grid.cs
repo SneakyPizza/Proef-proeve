@@ -90,7 +90,12 @@ public class Grid : MonoBehaviour {
 		{
 			float dist = Vector3.Distance(node.NodePos, _nodeList[i].NodePos);
 			if (dist == 1 || (dist > 1.40f && dist < 1.45f))
-				node.NeighbourNodes.Add(_nodeList[i]);
+			{
+				if (_nodeList[i].NodePos.x < node.NodePos.x)
+					continue;
+				else
+					node.NeighbourNodes.Add(_nodeList[i]);
+			}
 		}
 	}
 	
