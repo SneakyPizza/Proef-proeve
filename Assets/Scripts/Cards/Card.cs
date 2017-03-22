@@ -15,13 +15,13 @@ public class Card : MonoBehaviour
         _player = GameObject.FindGameObjectWithTag(Tags.PLAYER).GetComponent<Player>();
     }
 
-    public virtual void ActivateSelf(Player _player)
+    public virtual void ActivateSelf(Player _player = null, Node node = null)
     {
         Debug.Log("Activated " + this + " Card");
     }
-    public virtual void ActivateOther(Player _player)
+    public virtual void ActivateOther(Player _player = null, Node node = null)
     {
-        Debug.Log("Activated" + this + " Card on : \"TARGET\"");
+        Debug.Log("Activated" + this + " Card on : " + _player + " | " + node);
     }
 
     public void DeactivateCard()

@@ -49,6 +49,8 @@ public class Player : MonoBehaviour {
 
 	void Update()
 	{
+        if (_trapped)
+        Debug.Log(this.gameObject.name + " Trapped = " + _trapped);
 		if (Input.GetMouseButtonDown(0) && (_canWalk && !_hasWalked))
 		{
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);

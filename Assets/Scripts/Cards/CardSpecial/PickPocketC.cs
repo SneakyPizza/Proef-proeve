@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PickPocketC : Card
 {
-    public override void ActivateOther(Player player)
+    public override void ActivateOther(Player player = null, Node node = null)
     {
         base.ActivateOther(player);
         PlayerRotation rot = GameObject.FindWithTag(Tags.GAMECONTROLLER).GetComponent<PlayerRotation>();
