@@ -291,6 +291,7 @@ public class Player : MonoBehaviour {
 				ActivateBoost();
 		}
 	}
+
 	public PlayerTrail GetPlayerTrail
 	{
 		get

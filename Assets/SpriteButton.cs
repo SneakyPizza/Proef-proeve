@@ -10,6 +10,7 @@ public class SpriteButton : MonoBehaviour {
 
 	[SerializeField] private Button.ButtonClickedEvent clickEvent;
 	[SerializeField] private Color clickedColor;
+	[SerializeField] private AudioClip _clickSound;
 	private bool selected;
 
 	void Start()
@@ -48,6 +49,7 @@ public class SpriteButton : MonoBehaviour {
 		{
 			if (myCollider.bounds.Contains(position))
 			{
+				SoundGenerator.GenerateSound(_clickSound);
 				clickEvent.Invoke();
 			}
 			if (spriteRenderer.color != Color.white)
