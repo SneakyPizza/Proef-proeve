@@ -34,12 +34,17 @@ public class PlayerRotation : MonoBehaviour {
 	{
 
         GameObject[] goCards = GameObject.FindGameObjectsWithTag(Tags.CARD);
-        Card[] cards = new Card[goCards.Length];
-        foreach(Card card in cards)
+        if (goCards.Length > 0)
         {
-            if (card.CardSelected)
-                card.CardSelected = false;
+            Card[] cards = new Card[goCards.Length];
+            for (int i = 0; i < goCards.Length; i++)
+            {
+                cards[i] = goCards[i].GetComponent<Card>();
+                if (cards[i].CardSelected)
+                    cards[i].CardSelected = false;
+            }
         }
+       
         // _cardManager.CardToggler(CurrentPlayer, false);
         _players[_currentPlayer].EndTurn();
         

@@ -62,18 +62,28 @@ public class CardManager : MonoBehaviour
 
                 if ((_cardSelected) && hit.collider.tag == "Player" && _card.CardSelected)
                 {
-                    
-                    _player = hit.collider.GetComponent<Player>();
-                    _player = _playerRotation.Players[_playerRotation.CurrentPlayer];
-                    _card.ActivateSelf(_player);
+                    _card.DeactivateCard();
+                    if (hit.collider.GetComponent<Player>())
+                    {
+                        _card.ActivateSelf(hit.collider.GetComponent<Player>());
+                    }
+                    _cardSelected = false;
                     return;
                 }
 
                 else if ((_cardSelected) && _card.CardSelected && hit.collider.tag == "Node")
                 {
                     //_card = hit.collider.GetComponent<Card>();
-                    _player = hit.collider.GetComponent<Player>();
-                    _card.ActivateOther(_player);
+                    _card.DeactivateCard();
+                    if (hit.collider.GetComponent<Player>())
+                    {
+                        _card.ActivateOther(hit.collider.GetComponent<Player>());
+                    }
+                    else if (hit.collider.GetComponent<Node>())
+                    {
+                        _card.ActivateOther(null, hit.collider.GetComponent<Node>());
+                    }
+                    _cardSelected = false;
                     return;
                 }
             }
@@ -123,20 +133,11 @@ public class CardManager : MonoBehaviour
         }
        
         cardObject.transform.position = _cardPositions[(4 * currentPlayer) + PlayerDecks[currentPlayer].Count].position;
-
+        cardObject.name = cardObject.GetComponent<Card>().GetType().ToString();
         Debug.Log(_newCard);
-        
-
+       
     }
-
-   /* public void CardToggler(int CurrentPlayer, bool Active)
-    {
-        foreach(GameObject card in PlayerDecks[CurrentPlayer])
-        {
-           // card.SetActive(Active);
-        }
-    } */
-     
+         
     public GameObject NewCard
     {
         get
