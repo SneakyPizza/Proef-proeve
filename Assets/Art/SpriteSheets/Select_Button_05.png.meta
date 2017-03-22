@@ -1,0 +1,622 @@
+fileFormatVersion: 2
+guid: faf3c0dde2da0fe48a2257ba6e445cf8
+timeCreated: 1490021572
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Select_Button_05_0
+    21300002: Select_Button_05_1
+    21300004: Select_Button_05_2
+    21300006: Select_Button_05_3
+    21300008: Select_Button_05_4
+    21300010: Select_Button_05_5
+    21300012: Select_Button_05_6
+    21300014: Select_Button_05_7
+    21300016: Select_Button_05_8
+    21300018: Select_Button_05_9
+    21300020: Select_Button_05_10
+    21300022: Select_Button_05_11
+    21300024: Select_Button_05_12
+    21300026: Select_Button_05_13
+    21300028: Select_Button_05_14
+    21300030: Select_Button_05_15
+    21300032: Select_Button_05_16
+    21300034: Select_Button_05_17
+    21300036: Select_Button_05_18
+    21300038: Select_Button_05_19
+    21300040: Select_Button_05_20
+    21300042: Select_Button_05_21
+    21300044: Select_Button_05_22
+    21300046: Select_Button_05_23
+    21300048: Select_Button_05_24
+    21300050: Select_Button_05_25
+    21300052: Select_Button_05_26
+    21300054: Select_Button_05_27
+    21300056: Select_Button_05_28
+    21300058: Select_Button_05_29
+    21300060: Select_Button_05_30
+    21300062: Select_Button_05_31
+    21300064: Select_Button_05_32
+    21300066: Select_Button_05_33
+    21300068: Select_Button_05_34
+    21300070: Select_Button_05_35
+    21300072: Select_Button_05_36
+    21300074: Select_Button_05_37
+    21300076: Select_Button_05_38
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 8192
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Select_Button_05_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3396
+        width: 500
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Select_Button_05_1
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 3396
+        width: 500
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Select_Button_05_2
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 3396
+        width: 500
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Select_Button_05_3
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 3396
+        width: 500
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Select_Button_05_4
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 3396
+        width: 500
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Select_Button_05_5
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 3396
+        width: 500
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Select_Button_05_6
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 3396
+        width: 500
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Select_Button_05_7
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 3396
+        width: 500
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Select_Button_05_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2696
+        width: 500
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Select_Button_05_9
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 2696
+        width: 500
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Select_Button_05_10
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 2696
+        width: 500
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Select_Button_05_11
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 2696
+        width: 500
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Select_Button_05_12
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 2696
+        width: 500
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Select_Button_05_13
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 2696
+        width: 500
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Select_Button_05_14
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 2696
+        width: 500
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Select_Button_05_15
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 2696
+        width: 500
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Select_Button_05_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1996
+        width: 500
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Select_Button_05_17
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1996
+        width: 500
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Select_Button_05_18
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 1996
+        width: 500
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Select_Button_05_19
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 1996
+        width: 500
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Select_Button_05_20
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 1996
+        width: 500
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Select_Button_05_21
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 1996
+        width: 500
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Select_Button_05_22
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 1996
+        width: 500
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Select_Button_05_23
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 1996
+        width: 500
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Select_Button_05_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1296
+        width: 500
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Select_Button_05_25
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1296
+        width: 500
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Select_Button_05_26
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 1296
+        width: 500
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Select_Button_05_27
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 1296
+        width: 500
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Select_Button_05_28
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 1296
+        width: 500
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Select_Button_05_29
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 1296
+        width: 500
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Select_Button_05_30
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 1296
+        width: 500
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Select_Button_05_31
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 1296
+        width: 500
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Select_Button_05_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 596
+        width: 500
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Select_Button_05_33
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 596
+        width: 500
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Select_Button_05_34
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 596
+        width: 500
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Select_Button_05_35
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 596
+        width: 500
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Select_Button_05_36
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 596
+        width: 500
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Select_Button_05_37
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 596
+        width: 500
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Select_Button_05_38
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 596
+        width: 500
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -6,27 +6,14 @@ public class PlayerRotation : MonoBehaviour {
 
 	private int _currentPlayer = 0;
 
-	private SmoothCameraFollow _cameraFollow;
+	[SerializeField] private SmoothCameraFollow _cameraFollow;
 	private List<Player> _players = new List<Player>();
     private CardManager _cardManager;
-
-
-	void Awake()
-	{
-		_cameraFollow = Camera.main.GetComponent<SmoothCameraFollow>();
-	}
-
-	void Start()
-	{
-		_cameraFollow.SetTarget = _players[_currentPlayer].PlayerObject.transform;
-	}
 
 	void Update()
 	{
 		if (Input.GetKeyDown(KeyCode.Space))
 			StartCoroutine(EndTurn(0.25f));
-		if (Input.GetKeyDown(KeyCode.A))
-			_players[_currentPlayer].BoostActive = true;
 	}
 
 	public IEnumerator EndTurn(float waitTime)
@@ -39,7 +26,7 @@ public class PlayerRotation : MonoBehaviour {
 			_currentPlayer = 0;
 		
 		_cameraFollow.SetTarget = _players[_currentPlayer].PlayerObject.transform;
-        _cardManager.DrawCard();
+       // _cardManager.DrawCard();
 		_players[_currentPlayer].EnableTurn();
 		yield return new WaitForEndOfFrame();
 	}

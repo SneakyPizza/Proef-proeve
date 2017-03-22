@@ -1,0 +1,244 @@
+fileFormatVersion: 2
+guid: 2202381440dd87647acf065db1f7ac62
+timeCreated: 1490021996
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Title_Intro_14_0
+    21300002: Title_Intro_14_1
+    21300004: Title_Intro_14_2
+    21300006: Title_Intro_14_3
+    21300008: Title_Intro_14_4
+    21300010: Title_Intro_14_5
+    21300012: Title_Intro_14_6
+    21300014: Title_Intro_14_7
+    21300016: Title_Intro_14_8
+    21300018: Title_Intro_14_9
+    21300020: Title_Intro_14_10
+    21300022: Title_Intro_14_11
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 8192
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Title_Intro_14_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3448
+        width: 1500
+        height: 648
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Title_Intro_14_1
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 3448
+        width: 1500
+        height: 648
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Title_Intro_14_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2800
+        width: 1500
+        height: 648
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Title_Intro_14_3
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 2800
+        width: 1500
+        height: 648
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Title_Intro_14_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2152
+        width: 1500
+        height: 648
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Title_Intro_14_5
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 2152
+        width: 1500
+        height: 648
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Title_Intro_14_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1504
+        width: 1500
+        height: 648
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Title_Intro_14_7
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 1504
+        width: 1500
+        height: 648
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Title_Intro_14_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 856
+        width: 1500
+        height: 648
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Title_Intro_14_9
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 856
+        width: 1500
+        height: 648
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Title_Intro_14_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 208
+        width: 1500
+        height: 648
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Title_Intro_14_11
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 208
+        width: 1500
+        height: 648
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

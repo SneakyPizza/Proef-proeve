@@ -7,8 +7,30 @@ public class SmoothCameraFollow : MonoBehaviour {
 	[SerializeField] private Vector2 _minPos = new Vector2(), _maxPos = new Vector2();
 	[SerializeField] private float _maxDist = 0.05f;
 
+	[SerializeField] private float _zoomSpeed;
+
 	private Transform _target;
 	private Vector3 newPos;
+
+	void OnEnable()
+	{
+		StartCoroutine(Zoom());
+	}
+
+	private IEnumerator Zoom()
+	{
+		Camera cam = GetComponent<Camera>();
+
+		cam.orthographicSize = 10.75f;
+
+		while (cam.orthographicSize != 6.5f)
+		{
+			cam.orthographicSize = Mathf.MoveTowards(cam.orthographicSize, 6.5f, _zoomSpeed * Time.deltaTime);
+			yield return new WaitForEndOfFrame();
+		}
+
+		yield return new WaitForEndOfFrame();
+	}
 
 	void Update()
 	{

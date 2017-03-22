@@ -24,6 +24,7 @@ public class Player : MonoBehaviour {
 	private SpriteAnimation _spriteAnimation;
 
 	private List<Node> _traversedNodes = new List<Node>();
+	private Node _currentNode;
 
 	void Awake()
 	{
@@ -55,13 +56,16 @@ public class Player : MonoBehaviour {
 
 			if ((hit.collider != null) && (hit.collider.tag == Tags.NODE || hit.collider.tag == Tags.ENDNODE))
 			{
-				_hasWalked = true;
-				ColourNearbyNodes(false);
-				StopCoroutine("MoveToNode");
-				StartCoroutine(MoveToNode(hit.collider.GetComponent<Node>()));
-				if (hit.collider.tag == Tags.ENDNODE)
+				if (_currentNode.NeighbourNodes.Contains(hit.collider.GetComponent<Node>()))
 				{
-					StartCoroutine(GameObject.FindWithTag(Tags.GAMECONTROLLER).GetComponent<EndGameManager>().EndGame(this));
+					_hasWalked = true;
+					ColourNearbyNodes(false);
+					StopCoroutine("MoveToNode");
+					StartCoroutine(MoveToNode(hit.collider.GetComponent<Node>()));
+					if (hit.collider.tag == Tags.ENDNODE)
+					{
+						StartCoroutine(GameObject.FindWithTag(Tags.GAMECONTROLLER).GetComponent<EndGameManager>().EndGame(this));
+					}
 				}
 			}
 		}
@@ -130,6 +134,7 @@ public class Player : MonoBehaviour {
 		{
 			if (transform.position == nodeList[i].NodePos)
 			{
+				_currentNode = nodeList[i];
 				_nearbyNodes = new List<Node>(nodeList[i].NeighbourNodes);
 				break;
 			}
@@ -146,13 +151,11 @@ public class Player : MonoBehaviour {
 				{
 					if (!nearbyNode.HasPlayer)
 					{
-						nearbyNode.GetComponent<Collider2D>().enabled = true;
 						nearbyNode.GetComponent<Renderer>().material.color = Color.cyan;
 					}
 				}
 				else
 				{
-					nearbyNode.GetComponent<Collider2D>().enabled = false;
 					_nearbyNodes = null;
 					nearbyNode.GetComponent<Renderer>().material.color = Color.white;
 				}

@@ -9,7 +9,8 @@ public static class SoundGenerator {
 	{
 		GameObject go = new GameObject(clip.name);
 		AudioSource source = go.AddComponent<AudioSource>();
-		AudioAsset asset = new AudioAsset();
+		source.clip = clip;
 
+		GameObject.Destroy(go, clip.length);
 	}
 }
