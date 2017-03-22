@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class TrapC : Card
 {
+    protected override void Start()
+    {
+        base.Start();
+    }
+
     public override void ActivateOther(Player player)
     {
         base.ActivateOther(player);
@@ -11,10 +16,10 @@ public class TrapC : Card
 
         if (player != rot.Players[rot.CurrentPlayer])
         {
-            //TODO: skip walk
             Debug.Log("Trap used on" + player);
 
-            player.EndTurn();
+            _player.Trapped = true;
+            Destroy(this.gameObject);
         }
     }
 }

@@ -10,6 +10,11 @@ public class Card : MonoBehaviour
     protected PlayerRotation _playerRotation;
     private bool _cardSelected = false;
 
+    protected virtual void Start()
+    {
+        _player = GameObject.FindGameObjectWithTag(Tags.PLAYER).GetComponent<Player>();
+    }
+
     public virtual void ActivateSelf(Player _player)
     {
         Debug.Log("Activated " + this + " Card");
@@ -27,7 +32,7 @@ public class Card : MonoBehaviour
     public void SelectCard()
     {
         Debug.Log("Selected");
-        //_selectedCard = gameObject;
+        _selectedCard = gameObject;
         _cardSelected = true;
     }
     public bool CardSelected
@@ -35,6 +40,10 @@ public class Card : MonoBehaviour
         get
         {
             return _cardSelected;
+        }
+        set
+        {
+            _cardSelected = value;
         }
     }
 }
