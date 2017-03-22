@@ -9,4 +9,5 @@ public class Tags : MonoBehaviour {
 	public const string STARTNODE = "StartNode";
 	public const string ENDNODE = "EndNode";
 	public const string NODE = "Node";
+    public const string CARD = "Card";
 }

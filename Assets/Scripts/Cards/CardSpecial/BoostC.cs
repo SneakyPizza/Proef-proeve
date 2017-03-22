@@ -8,7 +8,6 @@ public class BoostC : Card
     {
         PlayerRotation rot = GameObject.FindWithTag(Tags.GAMECONTROLLER).GetComponent<PlayerRotation>();
         rot.Players[rot.CurrentPlayer].BoostActive = true;
-        //currentplayer only
-        Debug.Log("boost click");
+        Destroy(this.gameObject);
 	}
 }
